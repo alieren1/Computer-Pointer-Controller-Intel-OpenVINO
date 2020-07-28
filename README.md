@@ -29,9 +29,17 @@ Command Prompt was opened and setupvars.bat batch file was entered in the comman
 environment variables which OpenVINO bin folder included.
 
 Step 2:
-Virtual environment was created: virtualenv venv
-Virtual environment was activated: venv\Scripts\activate
-Project dependencies were installed in the project directory: pip install requirements.txt
+Virtual environment was created:
+
+    virtualenv venv
+    
+Virtual environment was activated:
+
+    venv\Scripts\activate
+
+Project dependencies were installed in the project directory:
+
+    pip install requirements.txt
 
 Step 3:
 OpenVINO pretrained models were downloaded using OpenVINO model downloader script:
@@ -54,9 +62,35 @@ First, project directory was entered in the command line:
 
     cd <project path>
     
+CPU – FP32:
+
     python src/main.py -fd model/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -hp model/intel/head-pose-estimation-adas-0001/FP32/head-pose-estimation-adas-0001.xml -fl model/intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009.xml -ge model/intel/gaze-estimation-adas-0002/FP32/gaze-estimation-adas-0002.xml -i bin/demo.mp4
 
+CPU – FP16:
+
+    python src/main.py -fd model/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -hp model/intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001.xml -fl model/intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009.xml -ge model/intel/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002.xml -i bin/demo.mp4
+
+CPU – FP32-INT8:
+
+    python src/main.py -fd model/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -hp model/intel/head-pose-estimation-adas-0001/FP32-INT8/head-pose-estimation-adas-0001.xml -fl model/intel/landmarks-regression-retail-0009/FP32-INT8/landmarks-regression-retail-0009.xml -ge model/intel/gaze-estimation-adas-0002/FP32-INT8/gaze-estimation-adas-0002.xml -i bin/demo.mp4
+
+GPU – FP32:
+
+    python src/main.py -fd model/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -hp model/intel/head-pose-estimation-adas-0001/FP32/head-pose-estimation-adas-0001.xml -fl model/intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009.xml -ge model/intel/gaze-estimation-adas-0002/FP32/gaze-estimation-adas-0002.xml -i bin/demo.mp4 -d GPU
+
+GPU – FP16:
+
+    python src/main.py -fd model/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -hp model/intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001.xml -fl model/intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009.xml -ge model/intel/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002.xml -i bin/demo.mp4 -d GPU
+
+GPU – FP32-INT8:
+
+    python src/main.py -fd model/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -hp model/intel/head-pose-estimation-adas-0001/FP32-INT8/head-pose-estimation-adas-0001.xml -fl model/intel/landmarks-regression-retail-0009/FP32-INT8/landmarks-regression-retail-0009.xml -ge model/intel/gaze-estimation-adas-0002/FP32-INT8/gaze-estimation-adas-0002.xml -i bin/demo.mp4 -d GPU
+
 ## Documentation
+
+Tree of the project documents:
+
+![doc_tree](./images/doc_tree.png)
 
 | Code File | Description
 | ------------------- | ------------- |
@@ -74,9 +108,10 @@ usage: main.py [-h] -fd FACE_DETECTION_MODEL -hp HEAD_POSE_MODEL -fl
                [-mp MOUSE_PRECISION] [-spd MOUSE_SPEED]
 
 Required parameter details can be called by entering command line:
-python3 src/main.py -h
 
-![parameters](./images/doc_tree.png)
+    python3 src/main.py -h
+
+![parameters](./images/parameters.png)
 
 ## Benchmarks
 
