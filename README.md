@@ -35,11 +35,16 @@ Project dependencies were installed in the project directory: pip install requir
 
 Step 3:
 OpenVINO pretrained models were downloaded using OpenVINO model downloader script:
-cd C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\tools\model_downloader\intel
-python downloader.py --name face-detection-adas-binary-0001
-python downloader.py --name landmarks-regression-retail-0009
-python downloader.py --name head-pose-estimation-adas-0001
-python downloader.py --name gaze-estimation-adas-0002
+
+    cd C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\tools\model_downloader\intel
+    
+    python downloader.py --name face-detection-adas-binary-0001
+    
+    python downloader.py --name landmarks-regression-retail-0009
+    
+    python downloader.py --name head-pose-estimation-adas-0001
+    
+    python downloader.py --name gaze-estimation-adas-0002
 
 These downloaded models were copied to the project directory under the model folder.
 
@@ -49,7 +54,7 @@ First, project directory was entered in the command line:
 
     cd <project path>
     
-python src/main.py -fd model/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -hp model/intel/head-pose-estimation-adas-0001/FP32/head-pose-estimation-adas-0001.xml -fl model/intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009.xml -ge model/intel/gaze-estimation-adas-0002/FP32/gaze-estimation-adas-0002.xml -i bin/demo.mp4
+    python src/main.py -fd model/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -hp model/intel/head-pose-estimation-adas-0001/FP32/head-pose-estimation-adas-0001.xml -fl model/intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009.xml -ge model/intel/gaze-estimation-adas-0002/FP32/gaze-estimation-adas-0002.xml -i bin/demo.mp4
 
 ## Documentation
 
